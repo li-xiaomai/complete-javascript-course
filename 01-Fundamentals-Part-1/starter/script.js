@@ -190,6 +190,7 @@ if (birthYear <= 2000) {
 console.log(century);
 */
 
+/*
 // challenge
 // data 1
 // const MarksWeight = 78;
@@ -211,3 +212,25 @@ if (MarksBMI > JohnsBMI) {
 } else if (MarksBMI < JohnsBMI) {
   console.log(`John's BMI(${JohnsBMI}) is higher than Mark's${MarksBMI}`);
 }
+*/
+
+// type conversion 强制转换
+const inputYear = "1991";
+console.log(Number(inputYear) + 18); //2009   1991 +18
+
+console.log(Number("xiaomai")); // NaN
+console.log(typeof NaN);
+
+console.log(String(23)); //'23'
+
+//type coercion 隐式转换
+console.log(inputYear + 18); //199118  发生隐式转换，将数字18转为字符串18
+console.log("I am " + 23 + " years old");
+console.log("I am " + " 23 " + " years old ");
+console.log("23" - "10" - 3); // 遇到减号，发生隐式类型转换，将字符串数字转为数字 23 - 10 -3 =10
+console.log("23" * "10"); // 遇到*
+console.log("23" / "10"); // 遇到/
+
+let n = "1" + 1; //隐式转位：11 字符串拼接
+n -= 1; //隐式转换为 11 - 1 = 10
+console.log(n); // 10
