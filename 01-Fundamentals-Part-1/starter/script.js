@@ -168,6 +168,7 @@ muliple
 line`);
 */
 
+/*
 const age = 15;
 // const isOldEnough = age >= 18;
 
@@ -187,3 +188,26 @@ if (birthYear <= 2000) {
 }
 
 console.log(century);
+*/
+
+// challenge
+// data 1
+// const MarksWeight = 78;
+// const MarksHeight = 1.69;
+// const JohnsWight = 92;
+// const JohnsHeight = 1.95;
+
+// data 2
+const MarksWeight = 95;
+const MarksHeight = 1.88;
+const JohnsWight = 85;
+const JohnsHeight = 1.76;
+
+const MarksBMI = MarksWeight / MarksHeight ** 2;
+const JohnsBMI = JohnsWight / JohnsHeight ** 2;
+
+if (MarksBMI > JohnsBMI) {
+  console.log(`Mark's BMI(${MarksBMI}) is higher than John's(${JohnsBMI})`);
+} else if (MarksBMI < JohnsBMI) {
+  console.log(`John's BMI(${JohnsBMI}) is higher than Mark's${MarksBMI}`);
+}
