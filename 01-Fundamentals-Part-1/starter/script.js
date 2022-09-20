@@ -94,6 +94,7 @@ console.log(isFullAge);
 console.log(NOW - 1991 > NOW - 2018);
 */
 
+/*
 const NOW = 2037;
 let ageJonas = NOW - 1991;
 let ageXiaomai = NOW - 2018;
@@ -105,3 +106,30 @@ console.log(x, y);
 
 const averageAge = (ageJonas + ageXiaomai) / 2;
 console.log(ageJonas, ageXiaomai, averageAge);
+*/
+
+// Challenge
+// data 1
+const MarksWeight = 78;
+const MarksHeight = 1.69;
+const JohnsWight = 92;
+const JohnsHeight = 1.95;
+
+// data 2
+// const MarksWeight = 95;
+// const MarksHeight = 1.88;
+// const JohnsWight = 85;
+// const JohnsHeight = 1.76;
+
+const MarksBMI = MarksWeight / MarksHeight ** 2;
+const JohnsBIM = JohnsWight / JohnsHeight ** 2;
+
+const markHigherBIM = MarksBMI > JohnsBIM;
+console.log(
+  "MarksBMI:",
+  MarksBMI,
+  "JohnsBIM:",
+  JohnsBIM,
+  "markHigherBIM:",
+  markHigherBIM
+);
