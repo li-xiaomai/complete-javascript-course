@@ -84,6 +84,7 @@ function fruitProcessor(apples, oranges) {
 console.log(fruitProcessor(2, 3));
 */
 
+/*
 const caclAge = (birthYear) => 2037 - birthYear;
 
 const whoYearUntilRetirement = (birthYear, firstName) => {
@@ -100,3 +101,37 @@ const whoYearUntilRetirement = (birthYear, firstName) => {
 };
 console.log(whoYearUntilRetirement(1991, "xiaomai"));
 console.log(whoYearUntilRetirement(1950, "xiaomai"));
+*/
+
+// challenge
+// data 1
+const dolphinScore1 = 44;
+const dolphinScore2 = 23;
+const dolphinScore3 = 71;
+const koalaScore1 = 65;
+const koalaScore2 = 54;
+const koalaScore3 = 49;
+
+// data 2
+// const dolphinScore1 = 85;
+// const dolphinScore2 = 54;
+// const dolphinScore3 = 41;
+// const koalaScore1 = 23;
+// const koalaScore2 = 34;
+// const koalaScore3 = 27;
+
+const calcAverage = (score1, score2, score3) => (score1 + score2 + score3) / 3;
+const dolphinAverage = calcAverage(dolphinScore1, dolphinScore2, dolphinScore3);
+const koalaAverage = calcAverage(koalaScore1, koalaScore2, koalaScore3);
+
+const checkWinner = (dolphinAverage, koalaAverage) => {
+  if (dolphinAverage >= 2 * koalaAverage) {
+    console.log(`Dolphin win (${dolphinAverage} vs ${koalaAverage})`);
+  } else if (koalaAverage >= 2 * dolphinAverage) {
+    console.log(`Koala win (${koalaAverage} vs ${dolphinAverage})`);
+  } else {
+    console.log(`No team wins(${dolphinAverage} vs ${koalaAverage})`);
+  }
+};
+
+checkWinner(dolphinAverage, koalaAverage);
