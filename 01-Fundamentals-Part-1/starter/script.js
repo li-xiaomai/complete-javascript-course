@@ -427,6 +427,7 @@ const me = "jonas";
 console.log(`I'm ${2037 - 1991} years old ${me}`);
 */
 
+/*
 const age = 22;
 age >= 18
   ? console.log("I like to drink wine")
@@ -444,3 +445,27 @@ if (age >= 18) {
 console.log(`I like to drink ${drink2}`);
 
 console.log(`I like to drink ${age >= 18 ? "wine" : "water"}`);
+*/
+
+//data 1
+const bill = 275;
+
+//data 2
+// const bill = 40;
+
+//data 3
+// const bill = 430;
+
+let tip = bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+console.log(
+  `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
+);
+
+if (bill >= 50 && bill <= 300) {
+  tip = bill * 0.15;
+} else {
+  tip = bill * 0.2;
+}
+console.log(
+  `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
+);
