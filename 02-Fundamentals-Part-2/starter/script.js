@@ -72,6 +72,7 @@ console.log(whoYearUntilRetirement(1991, "xiaomai"));
 console.log(whoYearUntilRetirement(1980, "Bob"));
 */
 
+/*
 const cutFruitPieces = (fruit) => fruit * 4;
 function fruitProcessor(apples, oranges) {
   const applePieces = cutFruitPieces(apples);
@@ -81,3 +82,21 @@ function fruitProcessor(apples, oranges) {
 }
 
 console.log(fruitProcessor(2, 3));
+*/
+
+const caclAge = (birthYear) => 2037 - birthYear;
+
+const whoYearUntilRetirement = (birthYear, firstName) => {
+  const age = caclAge(birthYear);
+  const retirement = 65 - age;
+
+  if (retirement > 0) {
+    return retirement;
+  } else {
+    return `已经退休了`;
+  }
+
+  // return `${firstName} retires in ${retirement}`;
+};
+console.log(whoYearUntilRetirement(1991, "xiaomai"));
+console.log(whoYearUntilRetirement(1950, "xiaomai"));
