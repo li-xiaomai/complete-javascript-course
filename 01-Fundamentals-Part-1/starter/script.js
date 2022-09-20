@@ -136,6 +136,7 @@ console.log(
 );
 */
 
+/*
 const firstName = "Jonas";
 const job = "teacher";
 const birthYear = 1991;
@@ -165,3 +166,24 @@ lines");
 console.log(`String
 muliple
 line`);
+*/
+
+const age = 15;
+// const isOldEnough = age >= 18;
+
+if (age >= 18) {
+  console.log("xiaomai can start driving license!");
+} else {
+  const yearLeft = 18 - age;
+  console.log(`xiaomai is too young, Wait another ${yearLeft} years`);
+}
+
+const birthYear = 1991;
+let century;
+if (birthYear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
+
+console.log(century);
