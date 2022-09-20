@@ -108,6 +108,7 @@ const averageAge = (ageJonas + ageXiaomai) / 2;
 console.log(ageJonas, ageXiaomai, averageAge);
 */
 
+/*
 // Challenge
 // data 1
 const MarksWeight = 78;
@@ -133,3 +134,34 @@ console.log(
   "markHigherBIM:",
   markHigherBIM
 );
+*/
+
+const firstName = "Jonas";
+const job = "teacher";
+const birthYear = 1991;
+const year = 2037;
+
+const jonas =
+  "I'm " +
+  " " +
+  firstName +
+  ", a " +
+  (year - birthYear) +
+  " years old " +
+  job +
+  " ! ";
+
+console.log(jonas);
+const jonasNew = `I'm  ${firstName},  a ${
+  year - birthYear
+} years old teacher !`;
+console.log(jonasNew);
+
+console.log(`Just a regular string...`);
+
+console.log("String with \n\
+muitiple \n\
+lines");
+console.log(`String
+muliple
+line`);
