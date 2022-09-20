@@ -278,6 +278,8 @@ console.log(
 );
 */
 
+/*
+
 const jonas = {
   firstName: "Jonas",
   lastName: "xiaomai",
@@ -312,3 +314,29 @@ console.log(jonas.age);
 // console.log(jonas["calcAge"]());
 
 console.log(jonas.getSummary());
+*/
+
+const MarkObj = {
+  fullname: "Mark Miller",
+  mass: 78,
+  height: 1.69,
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+const JohnObj = {
+  fullname: "John Smith",
+  mass: 92,
+  height: 1.95,
+  calcBMI: function () {
+    this.BMI = this.mass / this.height ** 2;
+    return this.BMI;
+  },
+};
+
+const higherPerson = JohnObj.calcBMI() > MarkObj.calcBMI() ? JohnObj : MarkObj;
+const lessPerson = JohnObj.calcBMI() < MarkObj.calcBMI() ? JohnObj : MarkObj;
+console.log(`${higherPerson.fullname}'s BMI(${higherPerson.BMI}) is higher than ${lessPerson.fullname}'s(${lessPerson.BMI})
+`);
