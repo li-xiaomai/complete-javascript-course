@@ -220,6 +220,7 @@ const total = [tips[0] + bills[0], tips[1] + bills[1], tips[2] + bills[2]];
 console.log(tips, total);
 */
 
+/*
 const jonasArray = [
   "jonas",
   "xiaomai",
@@ -235,3 +236,42 @@ const jonas = {
   job: "teacher",
   fiends: ["qianli", "xiaozhong", "zhangsan"],
 };
+*/
+
+const jonas = {
+  firstName: "Jonas",
+  lastName: "xiaomai",
+  age: 2037 - 1991,
+  job: "teacher",
+  friends: ["qianli", "xiaozhong", "zhangsan"],
+};
+console.log(jonas);
+console.log(jonas.lastName);
+console.log(jonas["lastName"]);
+
+const nameKey = "Name";
+console.log(jonas["first" + nameKey]);
+console.log(jonas["last" + nameKey]);
+
+// console.log(jonas.'last'+nameKey)
+
+const interestedIn = prompt(
+  "what do you know about jonas? Choose between firstName, lastName,age,job,friends"
+);
+console.log(jonas.interestedIn); //undefined 这里会认为是interestedIn这个属性
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]); // 会得到用户输入的属性值，interestedIn是一个用户输入的值（计算后）
+} else {
+  console.log(
+    "Wrong request! Choose between firstName, lastName,age,job,friends"
+  );
+}
+
+jonas.location = "wuhou";
+jonas["twitter"] = "@dsjkfh";
+console.log(jonas);
+
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}`
+);
