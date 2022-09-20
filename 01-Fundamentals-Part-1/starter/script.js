@@ -26,7 +26,7 @@ let job2 = "teacher";
 
 console.log(myFirstJob);
 */
-
+/*
 let javascriptIsFun = true;
 console.log(javascriptIsFun);
 
@@ -46,3 +46,17 @@ year = 1991;
 console.log(typeof year);
 
 console.log(typeof null);
+*/
+
+let age = 30;
+age = 31;
+
+const BIRTHDAY = 1990;
+//BIRTHDAY = 1991;//常量不可以更改
+//const JOB;// 常量初始必须赋值
+
+var job = "programmer";
+job = "teacher";
+
+lastName = "xiaomai";
+console.log(lastName); //发生变量提升。输出xiaomai
