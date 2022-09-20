@@ -138,6 +138,7 @@ const checkWinner = (dolphinAverage, koalaAverage) => {
 checkWinner(dolphinAverage, koalaAverage);
 */
 
+/*
 const friend1 = "qianli";
 const friend2 = "xiaomai";
 const friend3 = "moumou";
@@ -172,3 +173,37 @@ const ages = [
   caclAge(years[years.length - 1]),
 ];
 console.log(ages);
+*/
+
+const friends = ["qianli", "xiaomai", "moumou"];
+// add elements
+const newLength = friends.push("Jay"); // 4
+console.log(friends); //["qianli", "xiaomai", "moumou"， 'Jay']
+console.log(newLength); // 4
+
+friends.unshift("John");
+console.log(friends);
+
+// remove elements
+const popedElement = friends.pop();
+console.log(friends);
+console.log(popedElement);
+
+const firstElment = friends.shift();
+console.log(friends);
+console.log(firstElment);
+
+console.log(friends.indexOf("xiaomai"));
+console.log(friends.indexOf("John"));
+
+friends.push(23);
+console.log(friends.includes("xiaomai"));
+console.log(friends.includes("John"));
+console.log(friends.includes("23"));
+console.log(friends.includes(23));
+
+if (friends.includes("xiaomai")) {
+  console.log("You have a friend called xiaomai");
+} else {
+  console.log("You have not a friend called xiaomai");
+}
