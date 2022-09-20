@@ -262,6 +262,7 @@ if (height) {
 }
 */
 
+/*
 const age = "18";
 if (age === 18) console.log(`You just become a adult:strict`);
 if (age == 18) console.log(`You just become a adult:loose`);
@@ -281,4 +282,27 @@ if (favourite === 23) {
 
 if (Number(favourite) !== 23) {
   console.log("Why not is 23");
+}
+*/
+
+const hasDriversLicens = true;
+const hasGoodVision = true;
+
+console.log(hasDriversLicens && hasGoodVision);
+console.log(hasDriversLicens || hasGoodVision);
+console.log(!hasDriversLicens);
+
+// const shouldDrive = hasDriversLicens && hasGoodVision;
+
+if (hasDriversLicens && hasGoodVision) {
+  console.log(`She is able drive`);
+} else {
+  console.log(`Someone else should drive...`);
+}
+
+const isTired = false;
+if (hasDriversLicens && hasGoodVision && !isTired) {
+  console.log(`She is able drive`);
+} else {
+  console.log(`Someone else should drive...`);
 }
