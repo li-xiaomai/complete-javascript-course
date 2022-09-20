@@ -103,6 +103,7 @@ console.log(whoYearUntilRetirement(1991, "xiaomai"));
 console.log(whoYearUntilRetirement(1950, "xiaomai"));
 */
 
+/*
 // challenge
 // data 1
 const dolphinScore1 = 44;
@@ -135,3 +136,39 @@ const checkWinner = (dolphinAverage, koalaAverage) => {
 };
 
 checkWinner(dolphinAverage, koalaAverage);
+*/
+
+const friend1 = "qianli";
+const friend2 = "xiaomai";
+const friend3 = "moumou";
+
+const friends = ["qianli", "xiaomai", "moumou"];
+console.log(friends);
+
+const years1 = new Array(1991, 1992, 1993);
+console.log(years1);
+console.log(friends[0]);
+console.log(friends[1]);
+console.log(friends.length);
+console.log(friends[friends.length - 1]);
+
+friends[2] = "jay";
+console.log(friends);
+
+const firstName = "jonas";
+const jonas = [firstName, "xiaomai", 2037 - 1991, "teacher", friends];
+console.log(jonas);
+console.log(jonas.length);
+
+const caclAge = (birthYear) => 2037 - birthYear;
+const years = new Array(1990, 1967, 2002, 2010, 2018);
+const age1 = caclAge(years[0]);
+const age2 = caclAge(years[1]);
+const age3 = caclAge(years[years.length - 1]);
+console.log(age1, age2, age3);
+const ages = [
+  caclAge(years[0]),
+  caclAge(years[1]),
+  caclAge(years[years.length - 1]),
+];
+console.log(ages);
