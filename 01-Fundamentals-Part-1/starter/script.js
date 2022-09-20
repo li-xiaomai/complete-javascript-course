@@ -285,6 +285,7 @@ if (Number(favourite) !== 23) {
 }
 */
 
+/*
 const hasDriversLicens = true;
 const hasGoodVision = true;
 
@@ -305,4 +306,67 @@ if (hasDriversLicens && hasGoodVision && !isTired) {
   console.log(`She is able drive`);
 } else {
   console.log(`Someone else should drive...`);
+}
+*/
+
+// challenge
+// data 1
+// const dolphinsScore1 = 96;
+// const dolphinsScore2 = 108;
+// const dolphinsScore3 = 89;
+// const koalasScore1 = 88;
+// const koalasScore2 = 91;
+// const koalasScore3 = 110;
+
+//data 2
+const dolphinsScore1 = 97;
+const dolphinsScore2 = 112;
+const dolphinsScore3 = 101;
+const koalasScore1 = 109;
+const koalasScore2 = 95;
+const koalasScore3 = 123;
+
+//data 3
+// const dolphinsScore1 = 97;
+// const dolphinsScore2 = 112;
+// const dolphinsScore3 = 101;
+// const koalasScore1 = 109;
+// const koalasScore2 = 95;
+// const koalasScore3 = 106;
+
+const dolphinsAverage = (dolphinsScore1 + dolphinsScore2 + dolphinsScore3) / 3;
+const koalasAverage = (koalasScore1 + koalasScore2 + koalasScore3) / 3;
+
+if (dolphinsAverage > koalasAverage) {
+  console.log(
+    `Dolphine(${dolphinsAverage}) : Koala(${koalasAverage}) ---> dolphins(${dolphinsAverage}) is winner`
+  );
+} else if (dolphinsAverage == koalasAverage) {
+  console.log("no body win");
+} else {
+  console.log(
+    `Dolphine(${dolphinsAverage}) : Koala(${koalasAverage}) ---> koalas(${koalasAverage}) is winner`
+  );
+}
+
+if (dolphinsAverage > koalasAverage && dolphinsAverage >= 100) {
+  console.log(
+    `Dolphine(${dolphinsAverage}) : Koala(${koalasAverage}) ---> dolphins(${dolphinsAverage}) is winner`
+  );
+} else if (koalasAverage > dolphinsAverage && koalasAverage >= 100) {
+  console.log(
+    `Dolphine(${dolphinsAverage}) : Koala(${koalasAverage}) ---> koalas(${koalasAverage}) is winner`
+  );
+} else if (
+  koalasAverage === dolphinsAverage &&
+  koalasAverage >= 100 &&
+  dolphinsAverage >= 100
+) {
+  console.log(
+    `Dolphine(${dolphinsAverage}) : Koala(${koalasAverage}) ---> Both win`
+  );
+} else {
+  console.log(
+    `Dolphine(${dolphinsAverage}) : Koala(${koalasAverage}) ---> no body win`
+  );
 }
