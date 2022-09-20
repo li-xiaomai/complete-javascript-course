@@ -48,6 +48,7 @@ console.log(typeof year);
 console.log(typeof null);
 */
 
+/*
 let age = 30;
 age = 31;
 
@@ -60,3 +61,47 @@ job = "teacher";
 
 lastName = "xiaomai";
 console.log(lastName); //发生变量提升。输出xiaomai
+*/
+
+/*
+//Math operators
+const NOW = 2037;
+let ageJonas = NOW - 1991;
+let ageXiaomai = NOW - 2018;
+console.log(ageJonas, ageXiaomai);
+
+console.log(ageJonas * 2, ageXiaomai / 10, 2 ** 3);
+
+const firstName = "Jonas";
+const lastName = "Xiaomai";
+console.log(firstName + " " + lastName);
+console.log(`${firstName} ${lastName}`);
+
+// Assignment operators
+let x = 10 + 5; //15
+x += 10; //25  x = x + 10
+x *= 4; // 100 x = x *4;
+x++; //101 x = x + 1
+x--; //100 x = x -1;
+console.log(x); //100
+
+// Comparision opeators
+console.log(ageJonas > ageXiaomai); // true  <, >, <=,>=  ageJonas = 46 ageXiaomai = 19;
+console.log(ageXiaomai >= 18); // ture
+
+const isFullAge = ageXiaomai >= 18;
+console.log(isFullAge);
+console.log(NOW - 1991 > NOW - 2018);
+*/
+
+const NOW = 2037;
+let ageJonas = NOW - 1991;
+let ageXiaomai = NOW - 2018;
+console.log(NOW - 1991 > NOW - 2018);
+console.log(25 - 10 - 5);
+let x, y;
+x = y = 25 - 10 - 5; // x = y = 10;
+console.log(x, y);
+
+const averageAge = (ageJonas + ageXiaomai) / 2;
+console.log(ageJonas, ageXiaomai, averageAge);
