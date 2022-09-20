@@ -237,6 +237,7 @@ n -= 1; //隐式转换为 11 - 1 = 10
 console.log(n); // 10
 */
 
+/*
 // type conversion 强制类型转换 布尔值
 //5 falsy values: 0 '' undefined null NaN
 console.log(Boolean(0));
@@ -258,4 +259,26 @@ if (height) {
   console.log(`Height is defined`);
 } else {
   console.log(`Height is undefined`);
+}
+*/
+
+const age = "18";
+if (age === 18) console.log(`You just become a adult:strict`);
+if (age == 18) console.log(`You just become a adult:loose`);
+
+const favourite = prompt(`what's your favourite number?`); // 得到的值是一个字符串
+console.log(favourite);
+console.log(typeof favourite); // string
+
+if (favourite === 23) {
+  //'23' === 23
+  console.log(`23 is an amazaing number`); //不执行这句话
+} else if (Number(favourite) === 23) {
+  console.log(`type conversion Number(prompt(23)) is an amazaing number `);
+} else {
+  console.log("number is not 23");
+}
+
+if (Number(favourite) !== 23) {
+  console.log("Why not is 23");
 }
