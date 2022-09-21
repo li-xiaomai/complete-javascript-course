@@ -343,6 +343,7 @@ console.log(`${higherPerson.fullname}'s BMI(${higherPerson.BMI}) is higher than 
 `);
 */
 
+/*
 // console.log("Lifting weights repetition 1");
 // console.log("Lifting weights repetition 2");
 // console.log("Lifting weights repetition 3");
@@ -356,4 +357,45 @@ console.log(`${higherPerson.fullname}'s BMI(${higherPerson.BMI}) is higher than 
 
 for (let i = 1; i <= 10; i++) {
   console.log(`Lifting weights repetition ${i}`);
+}
+*/
+
+const jonasArray = [
+  "jonas",
+  "xiaomai",
+  2037 - 1991,
+  "teacher",
+  ["qianli", "xiaozhong", "zhangsan"],
+  true,
+];
+
+const types = [];
+for (let i = 0; i < jonasArray.length; i++) {
+  console.log(jonasArray[i]);
+  //filling types array
+  // types[i] = typeof jonasArray[i];
+  // types.push(typeof jonasArray[i]);
+  types.unshift(typeof jonasArray[i]);
+}
+console.log(types);
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+for (let i = 0; i < years.length; i++) {
+  ages[i] = 2037 - years[i];
+}
+console.log(ages);
+
+// continue break
+
+console.log("--------------continue-----------");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== "string") continue;
+  console.log(jonasArray[i], typeof jonasArray[i]);
+}
+
+console.log("--------------break-----------");
+for (let i = 0; i < jonasArray.length; i++) {
+  if (typeof jonasArray[i] !== "string") break;
+  console.log(jonasArray[i], typeof jonasArray[i]);
 }
