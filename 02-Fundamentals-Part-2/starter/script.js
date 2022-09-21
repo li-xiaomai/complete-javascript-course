@@ -427,6 +427,8 @@ for (let i = 1; i <= 3; i++) {
 //   console.log(`For:Lifting weights repetition ${i}`);
 // }
 
+/*
+
 let i = 1;
 while (i <= 10) {
   console.log(`While:Lifting weights repetition ${i}`);
@@ -440,3 +442,29 @@ while (dice !== 6) {
   dice = Math.trunc(Math.random() * 6) + 1;
   if (dice === 6) console.log("Loop is about to end....");
 }
+*/
+
+const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips = [];
+const totals = [];
+
+const length = bills.length;
+for (let i = 0; i < length; i++) {
+  tips[i] =
+    bills[i] >= 50 && bills[i] <= 300 ? bills[i] * 0.15 : bills[i] * 0.2;
+  totals.push(tips[i] + bills[i]);
+}
+
+const calcAverage = function (arr) {
+  let sum = 0;
+  const length = arr.length;
+  for (let i = 0; i < length; i++) {
+    sum += arr[i];
+  }
+
+  return sum / length;
+};
+
+const totalAverage = calcAverage(totals);
+
+console.log(bills, tips, totals, totalAverage);
