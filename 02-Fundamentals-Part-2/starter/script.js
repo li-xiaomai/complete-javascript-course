@@ -360,6 +360,7 @@ for (let i = 1; i <= 10; i++) {
 }
 */
 
+/*
 const jonasArray = [
   "jonas",
   "xiaomai",
@@ -398,4 +399,24 @@ console.log("--------------break-----------");
 for (let i = 0; i < jonasArray.length; i++) {
   if (typeof jonasArray[i] !== "string") break;
   console.log(jonasArray[i], typeof jonasArray[i]);
+}
+*/
+
+const jonasArray = [
+  "jonas",
+  "xiaomai",
+  2037 - 1991,
+  "teacher",
+  ["qianli", "xiaozhong", "zhangsan"],
+];
+
+for (let i = jonasArray.length - 1; i >= 0; i--) {
+  console.log(jonasArray[i]);
+}
+
+for (let i = 1; i <= 3; i++) {
+  console.log(`-----------starting exercise ${i}------`);
+  for (let rep = 1; rep <= 5; rep++) {
+    console.log(`-----------${i} Lifting weights repeatition ${rep}------`);
+  }
 }
