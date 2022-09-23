@@ -184,3 +184,53 @@ const addArrow = (a, b) => {
 };
 // addArrow(3, 4);
 */
+
+/*
+let age = 30;
+let oldAge = age;
+age = 31;
+console.log(age);
+console.log(oldAge);
+
+const me = {
+  name: 'jonas',
+  age: 30
+};
+const friend = me;
+friend.age = 27;
+console.log('friend:', friend);
+console.log('me:', me);
+*/
+//基础数据类型
+let lastName = 'xiaomai';
+let OldLastName = lastName;
+lastName = 'jonas';
+console.log(lastName, OldLastName);
+
+//引用类型
+const jonas = {
+  firstName: 'jonas',
+  lastName: 'xiaomai',
+  age: 27
+};
+
+const xiaomai = jonas;
+xiaomai.lastName = 'David';
+console.log(jonas, xiaomai);
+//因为xiaomai是常量，所以这里不能更改
+// xiaomai = {};
+
+// 复制对象
+const jonas2 = {
+  firstName: 'jonas',
+  lastName: 'xiaomai',
+  age: 27,
+  family: ['qianli', 'xiaozhong', 'xiaoluo']
+};
+
+const jonasCopy = Object.assign({}, jonas2);
+jonasCopy.lastName = 'David';
+jonasCopy.family[1] = 'zhongzhonger'; //因为是浅拷贝，所以family属性是对象，修改这个仍然会改动原对象这个值
+jonas2.family.push('xiaozhu'); //因为是浅拷贝，所以family属性是对象，修改这个仍然会影响指向这个值的对象
+console.log('jonasCopy', jonasCopy); // lastName: David
+console.log('jonas2', jonas2); //lastName:xiaoamijonasCopy
