@@ -29,8 +29,63 @@ const restaurant = {
   order: function (starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
+  orderDelivery: function ({
+    starterIndex = 1,
+    mainIndex = 4,
+    address = 'ds',
+    time = '21:00',
+  }) {
+    console.log(starterIndex, mainIndex, address, time);
+  },
 };
+restaurant.orderDelivery({
+  starterIndex: 9,
+  address: 'lll',
+});
 
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'via',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+//对象解构
+const { categories, openingHours } = restaurant;
+console.log(categories, openingHours);
+
+// 更改属性名
+const { categories: tags, openingHours: hours } = restaurant;
+console.log(tags, hours);
+
+//默认值
+const { menu = [], starterMenu: starters = [] } = restaurant;
+console.log(menu, starters);
+
+// 先定义，再改变
+let a = 111;
+let b = 999;
+const obj = { a: 23, b: 7, c: 14 };
+({ a, b } = obj);
+console.log(a, b);
+
+// 对象里面嵌套对象
+// const restaurant = {
+//   openingHours: {
+//     thu: {
+//       open: 12,
+//       close: 22,
+//     },
+//   }
+// }
+const {
+  openingHours: {
+    sat: { open: o, close: c },
+  },
+} = restaurant;
+console.log(o, c);
+
+/*
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
@@ -68,3 +123,4 @@ console.log(i, j, k); //2,5,6
 //解构时，给变量设置默认值
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
+*/
