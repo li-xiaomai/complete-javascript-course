@@ -26,4 +26,45 @@ const restaurant = {
       close: 24,
     },
   },
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
 };
+
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+const [x, y, z] = arr;
+console.log(x, y, z, arr);
+
+//categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+let [main, , secondary] = restaurant.categories; //因为中间空了一个
+console.log(main, secondary); //所以first = Italian, second = Vegetarian
+
+//以前交换两个值
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary);
+
+//现在交换两个值
+[main, secondary] = [secondary, main];
+console.log(main, secondary);
+
+//函数返回的是一个数组，我们可以解构为两个变量
+const [start, end] = restaurant.order(2, 0);
+console.log(start, end);
+
+// 数组嵌套数组
+const nested = [2, 3, [5, 6]];
+// const [i, , j] = nested;
+// console.log(i, j);// 2  [5,6]
+// 里面的数组【5，6】又解构了
+const [i, , [j, k]] = nested;
+console.log(i, j, k); //2,5,6
+
+//解构时，给变量设置默认值
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r);
