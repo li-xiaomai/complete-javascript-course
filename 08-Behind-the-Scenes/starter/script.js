@@ -1,6 +1,7 @@
 'use strict';
 
 /*
+// 作用域，作用域链
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
 
@@ -35,16 +36,20 @@ const firstName = 'jonas';
 calcAge(1991);
 */
 
-// Variables
+/*
+// 提升
+// Variables 变量提升
 // console.log(me);
 // console.log(job);
 // console.log(year);
+
+
 
 var me = 'jonas'; // 变量提升了，值为undefined
 let job = 'teacher'; // 变量未提升，得到错误，在初始化之前，不能使用
 const year = 1991; //变量未提升，得到错误，在初始化之前，不能使用
 
-// Function
+// Function 提升
 console.log(addDecl(2, 3)); // 5 函数声明会提升，值就是实际的函数，所以调用会执行
 // console.log(addExpr(2, 3)); // const addExpr 是不会变量提升，得到错误，在初始化之前，不能使用
 // console.log(addArrow(2, 3)); // const addArrow 是不会变量提升，得到错误，在初始化之前，不能使用
@@ -84,3 +89,98 @@ const z = 3;
 console.log(x === window.x); //true
 console.log(y === window.y); //false
 console.log(z === window.z); //false
+*/
+
+// this
+/*
+// window 全局的this指向window
+console.log(this); //window 全局的this指向window
+
+// 常规函数没有依附在任何对象上，所以this指向是undefined
+const calcAge = function (birthYear) {
+  console.log(2037 - birthYear);
+  console.log(this); //undefined
+};
+calcAge(1991);
+
+//箭头函数是没有自己的this，所以箭头函数里面的this，是其父元素的this，这里是window，因为calcAgeArrow的父元素的global
+const calcAgeArrow = birthYear => {
+  console.log(2037 - birthYear);
+  console.log(this); // window
+};
+calcAgeArrow(1991);
+
+//对象上的this,是调用这个方法的对象
+const jonas = {
+  year: 1991,
+  calcYear: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  }
+};
+jonas.calcYear(); //这里是jonas对象
+
+const xiaomai = {
+  year: 2017
+};
+xiaomai.calcAge = jonas.calcYear;
+xiaomai.calcAge(); //这里是xiaomai对象
+
+// 将对象上的方法，赋值给一个变量，这个变量就变成了一个常规函数，this就是undefined
+const f = jonas.calcYear;
+// f();
+
+//事件绑定的this,就是事件绑定的对象
+const f1 = function () {
+  console.log(this);
+};
+document.querySelector('h1').addEventListener('click', f1);
+*/
+
+/*
+const firstName = 'xiaomai';
+const jonas = {
+  firstName: 'jonas',
+  year: 1991,
+  calcYear: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+
+    // 第一种解决办法
+    const self = this;
+    // 因为这是一个常规函数，所以里面的this是undefined
+    // const isMillenial = function () {
+    //   console.log(this);
+    //   console.log(self.year >= 1981 && self.year <= 1991);
+    // };
+
+    //第二种解决办法
+    // 里层函数是箭头函数，箭头函数的this,是指向父作用域的this
+    const isMillenial = () => {
+      console.log(this);
+      console.log(self.year >= 1981 && self.year <= 1991);
+    };
+    isMillenial();
+  },
+  greet: () => {
+    console.log(this);
+    console.log(`Hey ${this.firstName}`);
+  }
+};
+jonas.calcYear();
+// jonas.greet();
+// console.log(this.firstName);
+
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+
+addExpr(2, 5);
+addExpr(2, 5, 4);
+const addArrow = (a, b) => {
+  console.log(arguments);
+  return a + b;
+};
+// addArrow(3, 4);
+*/
