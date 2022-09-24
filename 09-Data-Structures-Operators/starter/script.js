@@ -294,6 +294,8 @@ if (restaurant.orderPizza) {
 restaurant.orderPizza && restaurant.orderPizza('23', '34');
 */
 
+/*
+//空值合并操作符
 const restaurant = {};
 restaurant.numGuests = 0; //0
 restaurant.numGuests = ''; //''
@@ -305,3 +307,29 @@ console.log(guestsCorrect);
 
 const guests = restaurant.numGuests || 10;
 console.log(guests); //23
+*/
+
+const rest1 = {
+  name: 'xiaomai',
+  numGuests: 0,
+};
+const rest2 = {
+  name: 'xiaozhong',
+  owner: 'zhongzhonger',
+};
+
+// or assignment operator 如果变量值是虚假值，将为变量赋值
+// rest1.numGuests = rest1.numGuests || 10;
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// nullish assignment operator 如果变量值是undefined, null，将为变量赋值
+rest1.numGuests ??= '<ANONYMOUS>';
+rest2.numGuests ??= '<ANONYMOUS>';
+
+// and assignment operator 如果变量值为真，改变变量的值，为假，不做任何改变
+// rest1.owner = rest1.owner && '<ANONYMOUS>'; //{name: 'xiaomai', numGuests: 0, owner: undefined}
+rest1.owner &&= '<ANONYMOUS>'; //{name: 'xiaomai', numGuests: 0}
+rest2.owner &&= '<ANONYMOUS>'; //{name: 'xiaozhong', owner: '<ANONYMOUS>', numGuests: '<ANONYMOUS>'}
+console.log(rest1, rest2);
