@@ -4,6 +4,7 @@
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
+/*
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -79,11 +80,13 @@ console.log(a, b);
 //   }
 // }
 const {
+  openingHours: q,
   openingHours: {
     sat: { open: o, close: c },
   },
 } = restaurant;
-console.log(o, c);
+console.log(q, o, c);
+/*
 
 /*
 const arr = [2, 3, 4];
@@ -124,3 +127,67 @@ console.log(i, j, k); //2,5,6
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 */
+
+/*
+const arr = [7, 8, 9];
+const badArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badArr);
+
+const goodArr = [1, 2, ...arr];
+console.log(goodArr); // [1,2,7,8,9]
+
+console.log(...goodArr); //1 2 7 8 9
+console.log(1, 2, 7, 8, 9); //1 2 7 8 9
+
+const restaurant = {
+  mainMenu: ['Pizza', 'Pasta', 'Risotto', [1, 2]],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your declicious pasta with ${ing1}, ${ing2}, ${ing3}`);
+  },
+};
+// const ingredients = [
+//   prompt("let's make pasta! Ingredient 1?"),
+//   prompt("let's make pasta! Ingredient 2?"),
+//   prompt("let's make pasta! Ingredient 3?"),
+// ];
+// console.log(ingredients);
+// restaurant.orderPasta(...ingredients);
+
+const newMenu = [...restaurant.mainMenu, 'zhongcan'];
+console.log(newMenu); //['Pizza', 'Pasta', 'Risotto', 'zhongcan']
+console.log('------------------');
+
+// 复制函数 浅拷贝
+// const mainMenuCopy = [...newMenu];
+// mainMenuCopy[3][1] = 10;
+// console.log(newMenu, mainMenuCopy); //['Pizza', 'Pasta', 'Risotto', [1, 10]]
+
+// 合并两个数组
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+const str = 'jonas';
+const letters = [...str, ' ', 'S.'];
+console.log(letters); // ['j', 'o', 'n', 'a', 's', ' ', 'S.']
+console.log(...str); // j o n a s
+console.log('j', 'o', 'n', 'a', 's'); // j o n a s
+// console.log(`${...str}`);
+
+//object
+const newRestaurant = { foundIn: 1998, ...restaurant, founder: 'xiaomai' };
+console.log(newRestaurant);
+
+// 复制对象 浅拷贝
+const restaurantCopy = { ...newRestaurant };
+restaurantCopy.founder = 'mary';
+restaurantCopy.starterMenu[0] = 1;
+console.log(
+  restaurantCopy.founder,
+  newRestaurant.founder,
+  restaurantCopy.starterMenu[0],
+  newRestaurant.starterMenu[0]
+); // mary xiaomai 1 1
+*/
+
+//rest
