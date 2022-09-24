@@ -190,6 +190,7 @@ console.log(
 ); // mary xiaomai 1 1
 */
 
+/*
 //rest
 const arr = [1, 2, ...[3, 4]];
 console.log(arr); // [1, 2, 3, 4]
@@ -249,3 +250,44 @@ const x = [1, 2, 3, 4];
 add(...x);
 restaurant.orderPizza('1', '2', '3', '4');
 restaurant.orderPizza('1');
+*/
+
+// 短路
+// OR 只要第一个数据为真，就返回第一个数据
+// OR 第一个数据为假，返回第一个遇到真的数据，否则没有真的数据，直接返回最后一个数据
+console.log('-----OR------');
+console.log(3 || 'jonas'); // 3
+console.log('' || 'jonas'); //jonas
+console.log(true || 0); // true
+console.log(undefined || null); // null
+
+console.log(undefined || '' || 0 || 'hello' || 23 || null); // hello
+console.log(undefined || '' || 0 || NaN || false || null); // null
+
+// 下面两种方式是一样的，但是要避免第一种
+const restaurant = {};
+restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1); //23
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2); //23
+
+console.log('-----AND----');
+// AND 只要第一个数据为假，就返回第一个数据
+// AND 第一个数据为真，返回后面第一个遇到假的的数据，否则没有假的数据，直接返回最后一个数据
+console.log(0 && 'jonas'); // 0
+console.log(3 && 'jonas'); //jonas
+console.log(true && 0); // 0
+console.log('hello' && 23 && null && 'jonas'); //null
+console.log('hello' && 23 && 'sdf' && 'jonas'); //jonas
+
+// 下面两种方式是一样的，但是要避免第一种
+restaurant.orderPizza = function (mainIngredient, ...other) {
+  console.log(mainIngredient, other);
+};
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('23', '34');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('23', '34');
