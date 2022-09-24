@@ -415,6 +415,7 @@ console.log(win);
 const [a, b, c] = [20, 12, 45];
 */
 
+/*
 const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
 
 //计算属性
@@ -473,6 +474,8 @@ console.log(user[0]?.name ?? 'user are empty');
 //以前写法
 if (user.length > 0) console.log(user[0].name);
 else console.log('user are empty');
+
+*/
 /*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 for (const item of menu) console.log(item);
@@ -483,3 +486,98 @@ for (const [index, item] of menu.entries()) {
 // console.log([...menu.entries()]);
 // console.log(menu.entries());
 */
+
+// const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+/*
+const openingHours = {
+  Thu: {
+    open: 12,
+    close: 22,
+  },
+  Fri: {
+    open: 11,
+    close: 23,
+  },
+  Sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+const properties = Object.keys(openingHours); // 得到对象属性名的一个数组
+let openStr = `We can open on ${properties.length} days`;
+for (const day of properties) {
+  openStr += ` ${day},`;
+  console.log(openStr);
+}
+
+const values = Object.values(openingHours);
+const entries = Object.entries(openingHours);
+
+for (const [index, { open, close }] of entries) {
+  console.log(`On ${index},we open at  ${open}, we close at ${close}`);
+}
+*/
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+//1
+for (const [index, item] of game.scored.entries())
+  console.log(`Goal ${index + 1}: ${item}`);
+
+//2
+let sum = 0;
+for (const item of Object.values(game.odds)) {
+  sum += item;
+}
+console.log(sum / Object.keys(game.odds).length);
+
+//3
+for (const [index, item] of Object.entries(game.odds)) {
+  console.log(`Odd of ${game[index] ?? 'draw'}: ${item}`);
+}
+//4
+const scorers = {};
+for (const [index, item] of game.scored.entries()) {
+  scorers[item] = scorers[item] ? scorers[item] + 1 : 1;
+}
+console.log(scorers);
