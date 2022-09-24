@@ -252,6 +252,7 @@ restaurant.orderPizza('1', '2', '3', '4');
 restaurant.orderPizza('1');
 */
 
+/*
 // 短路
 // OR 只要第一个数据为真，就返回第一个数据
 // OR 第一个数据为假，返回第一个遇到真的数据，否则没有真的数据，直接返回最后一个数据
@@ -291,3 +292,16 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('23', '34');
+*/
+
+const restaurant = {};
+restaurant.numGuests = 0; //0
+restaurant.numGuests = ''; //''
+restaurant.numGuests = undefined; //右侧的值
+restaurant.numGuests = null; //右侧的值
+// 只有左侧的值是undefined和null的时候，返回右侧的值，否则返回左侧的值
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+
+const guests = restaurant.numGuests || 10;
+console.log(guests); //23
