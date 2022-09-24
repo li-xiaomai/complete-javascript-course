@@ -519,6 +519,7 @@ for (const [index, { open, close }] of entries) {
 }
 */
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -581,3 +582,34 @@ for (const [index, item] of game.scored.entries()) {
   scorers[item] = scorers[item] ? scorers[item] + 1 : 1;
 }
 console.log(scorers);
+*/
+
+/*
+const ordersSet = new Set([
+  'xiaomai',
+  'xiaozhong',
+  'xiaoqian',
+  'xiaomai',
+  'xiaoqian',
+]);
+console.log(ordersSet);
+console.log(ordersSet.size);
+console.log(new Set('xiaomai'));
+console.log(ordersSet.has('xiaomai'));
+ordersSet.add('xiaoluo');
+ordersSet.add('xiaoluo');
+console.log(ordersSet);
+ordersSet.delete('xiaomai');
+console.log(ordersSet);
+// ordersSet.clear();
+// console.log(ordersSet);
+
+for (const item of ordersSet) console.log(item);
+
+const staff = ['xiaomai', 'xiaoqian', 'xiaoli', 'xiaomai', 'xiaoli'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log(new Set(staff).size);
+console.log(new Set('xiaomai').size);
+*/
