@@ -336,6 +336,7 @@ rest2.owner &&= '<ANONYMOUS>'; //{name: 'xiaozhong', owner: '<ANONYMOUS>', numGu
 console.log(rest1, rest2);
 */
 
+/*
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -412,3 +413,56 @@ const win =
 console.log(win);
 
 const [a, b, c] = [20, 12, 45];
+*/
+
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+//计算属性
+const openingHours = {
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [`day-${4 + 2}`]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  //es6 属性名跟属性值相等时，省略掉属性值
+  openingHours,
+  // es6 函数不用写成函数表达式，
+  order(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+  //es6
+  orderDelivery({
+    starterIndex = 1,
+    mainIndex = 4,
+    address = 'ds',
+    time = '21:00',
+  }) {
+    console.log(starterIndex, mainIndex, address, time);
+  },
+};
+
+console.log(restaurant);
+/*
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+// for (const item of menu) console.log(item);
+for (const [index, item] of menu.entries()) {
+  // console.log(`${item[0] + 1}:${item[1]}`);
+  console.log(index + 1, item);
+}
+// console.log([...menu.entries()]);
+// console.log(menu.entries());
+*/
