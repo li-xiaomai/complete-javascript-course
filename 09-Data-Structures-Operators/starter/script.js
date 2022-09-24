@@ -427,7 +427,7 @@ const openingHours = {
     open: 11,
     close: 23,
   },
-  [`day-${4 + 2}`]: {
+  [weekdays[5]]: {
     open: 0, // Open 24 hours
     close: 24,
   },
@@ -455,10 +455,27 @@ const restaurant = {
   },
 };
 
-console.log(restaurant);
+console.log(restaurant?.openingHours?.fri?.open);
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const item of days) {
+  const open = restaurant?.openingHours[item]?.open ?? 'closed';
+  console.log(`on ${item} , we open at ${open}`);
+}
+
+//检查方法是否存在，存在就调用，不存在就提示不存在
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.order1?.(0, 1) ?? 'Method does not exist');
+
+//检查数组是否为空
+const user = [];
+console.log(user[0]?.name ?? 'user are empty');
+//以前写法
+if (user.length > 0) console.log(user[0].name);
+else console.log('user are empty');
 /*
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-// for (const item of menu) console.log(item);
+for (const item of menu) console.log(item);
 for (const [index, item] of menu.entries()) {
   // console.log(`${item[0] + 1}:${item[1]}`);
   console.log(index + 1, item);
