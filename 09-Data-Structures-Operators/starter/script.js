@@ -191,3 +191,61 @@ console.log(
 */
 
 //rest
+const arr = [1, 2, ...[3, 4]];
+console.log(arr); // [1, 2, 3, 4]
+const [a, b, ...others] = arr;
+console.log(a, b, others); // 1,2,[3, 4]
+
+const restaurant = {
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+  orderPizza: function (mainIngredient, ...other) {
+    console.log(mainIngredient, other);
+  },
+};
+
+// rest 是不包含跳过的其他元素的
+
+//解构中收集元素
+const [pizza, , risotto, ...other] = [
+  ...restaurant.starterMenu,
+  ...restaurant.mainMenu,
+];
+// other：['Caprese Salad', 'Pizza', 'Pasta', 'Risotto'] 没有跳过的‘Pasta’元素
+console.log(pizza, risotto, other);
+const {
+  openingHours: { sat, ...weekdays },
+} = restaurant;
+console.log(sat, weekdays);
+
+//function
+const add = function (...rest) {
+  console.log(rest); // 所有参数组成的一个数组
+  let sum = 0;
+  for (let i = 0; i < rest.length; i++) {
+    sum += rest[i];
+  }
+  console.log(sum);
+};
+
+add(2, 3);
+add(2, 3, 4, 3);
+add(2, 3, 4, 3, 1, 8, 9, 7);
+const x = [1, 2, 3, 4];
+add(...x);
+restaurant.orderPizza('1', '2', '3', '4');
+restaurant.orderPizza('1');
