@@ -1,8 +1,8 @@
 'use strict';
 
 // Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+// const flights =
+//   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
 
 /*
 // Data needed for first part of the section
@@ -720,6 +720,7 @@ console.log([...question.entries()]);
 console.log(question.entries());
 */
 
+/*
 const gameEvents = new Map([
   [17, '⚽️ GOAL'],
   [36, '🔁 Substitution'],
@@ -753,3 +754,186 @@ for (const [index, item] of gameEvents) {
   const name = index <= 45 ? 'FIRST' : 'SECOND';
   console.log(`[${name} HALF] ${index}: ${item}`);
 }
+*/
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('portugal'));
+console.log(airline.indexOf('Portugal'));
+
+console.log(airline.slice(4)); //从0开始，不回改变原字符串，返回新的字符串
+console.log(airline.slice(4, 7)); //结束的字符不包含在内 Air,截取的字符串长度是结束-开始
+console.log(airline.slice(0, airline.indexOf('P') + 1));
+console.log(airline.slice(-2)); //从字符串的最后到末尾(从尾部开始切)
+console.log(airline.slice(-2, -1)); //空
+console.log(airline.slice(-2, -3)); //空
+console.log(airline.slice(-2, 0)); //AP Air Portuga
+console.log(airline.slice(1, -1)); //从头到尾切，除了最后一个字符，AP Air Portuga
+
+const checkMiddleSeat = function (seat) {
+  // const s = seat.slice(-1);
+  // console.log(
+  //   s === 'B' || s === 'E' ? 'You got the middle seat' : 'You got lucky'
+  // );
+
+  console.log(
+    seat.indexOf('B') !== -1 || seat.indexOf('E') !== -1
+      ? 'You got the middle seat'
+      : 'You got lucky'
+  );
+};
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
+
+console.log(new String('jonas'));
+console.log(typeof new String('jonas'));
+console.log(typeof new String('jonas').slice(1));
+
+console.log(airline.toLocaleLowerCase());
+console.log(airline.toLocaleUpperCase());
+
+const passenger = 'jOnAS';
+const passengerLower = passenger.toLocaleLowerCase();
+console.log(passengerLower);
+const passengerCorrect =
+  passengerLower[0].toLocaleUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+// const lowerEmail = loginEmail.toLocaleLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+const normalEmail = loginEmail.toLocaleLowerCase().trim();
+console.log(normalEmail === email);
+
+const priceRGB = '288,97¥';
+const priceUS = priceRGB.replace('¥', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passenger come to boarding door 23, Boarding door 23!';
+console.log(announcement.replace('door', 'gate'));
+// console.log(announcement.replaceAll('door', 'gate'));
+
+console.log(announcement.replace(/door/g, 'gate'));
+
+const planeStr = 'Airbus A320neo';
+console.log(planeStr.includes('A320')); //true
+console.log(planeStr.includes('Boeing')); //false
+console.log(planeStr.startsWith('Air')); //true 字符串不是以这三个字母开头，不管是不是一个完整的单词
+console.log(planeStr.startsWith('AirbusA')); //false
+
+if (planeStr.startsWith('Airbus') && planeStr.endsWith('neo'))
+  console.log('is new');
+
+const checkBaggage = function (items) {
+  const baggage = items.toLocaleLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allow on board');
+  } else {
+    console.log('Welcome aboard');
+  }
+};
+
+checkBaggage('I have a laptop, some food and a pocket Knife');
+checkBaggage('Socks and camera');
+checkBaggage('Got some sancks and a gun for protection');
+
+// 返回的字符串数组
+console.log('a+very+nice+string'.split('+')); //['a', 'very', 'nice', 'string']
+console.log('Jonas xiaomai'.split(' ')); //['Jonas', 'xiaomai']
+//字符串转数组
+const [firstName, lastName] = 'Jonas xiaomai'.split(' ');
+console.log(firstName, lastName);
+// 数组转字符串('分隔符')
+const newName = ['Mr.', firstName, lastName.toLocaleUpperCase()].join('-----');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const nameArr = [];
+  for (const item of names) {
+    // nameArr.push(item[0].toLocaleUpperCase() + item.slice(1));
+    nameArr.push(item.replace(item[0], item[0].toLocaleUpperCase()));
+  }
+  console.log(nameArr.join(' '));
+};
+
+capitalizeName('jessica ann smith davis');
+capitalizeName('jonas schmedtmann');
+
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(30, '!!'));
+console.log('xiaomai'.padStart(25, '+'));
+console.log('xiaomai'.padEnd(25, '+'));
+
+const maskCreditCard = function (num) {
+  //数字转字符串 ‘’+num
+  //String(num)
+  const str = '' + num;
+  const last = str.slice(-4);
+  console.log(last.padStart(str.length, '*'));
+};
+maskCreditCard(1234567891226747);
+const message2 = 'Bad weather...All Departues Delayed...';
+console.log(message2.repeat(5));
+const planesInline = function (n) {
+  console.log(`There are ${n} planes in line ${'🛩'.repeat(5)}`);
+};
+planesInline(5);
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const changeStr = function () {
+  const text = document.querySelector('textarea').value;
+  console.log(text);
+  const rows = text.split('\n');
+  for (const [index, row] of rows.entries()) {
+    const [first, second] = row.toLocaleLowerCase().trim().split('_');
+
+    const output = `${first}${second.replace(
+      second[0],
+      second[0].toLocaleUpperCase()
+    )}`;
+    console.log(`${output.padEnd(20)}${'✅'.repeat(index + 1)}`);
+  }
+};
+document.querySelector('button').addEventListener('click', changeStr);
+//       underscore_case
+// first_name;
+// Some_variable;
+// calculate_AGE;
+// delayed_departure;
+
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const getCode = str => str.slice(0, 3).toLocaleUpperCase();
+
+const deStr = function (str) {
+  const flightsArr = str.split('+');
+  for (const fight of flightsArr) {
+    const [first, second, third, fourth] = fight.split(';');
+    const output = `${first.startsWith('_Delayed') ? '🔴' : ''}${first.replace(
+      /_/g,
+      ' '
+    )} from ${getCode(second)} to ${getCode(third)} (${fourth.replace(
+      ':',
+      'h'
+    )})`.padStart(50);
+    console.log(output);
+  }
+};
+deStr(flights);
+'sd'.toLocaleUpperCase;
