@@ -613,3 +613,143 @@ console.log(staffUnique);
 console.log(new Set(staff).size);
 console.log(new Set('xiaomai').size);
 */
+
+/*
+// 创建一个Map对象
+const rest = new Map();
+// 添加属性和属性值，.set()//返回更新后的map,支持链式调用，可以是任以类型的属性名
+rest.set('name', 'xiaomaiRest');
+rest.set(1, 'Fir');
+rest.set(2, 'sdf');
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'we are open')
+  .set(false, 'we are close');
+
+// 得到属性名的值
+console.log(rest.get('name')); // xiaomaiRest
+console.log(rest.get(true)); //we are open
+console.log(rest.get(1));
+const time = 8;
+console.log(rest.get(time > rest.get('open') && time < rest.get('close')));
+//判断map对象是否有某个属性
+console.log(rest.has('categories'));
+// 删除map对象的属性
+rest.delete(2);
+console.log(rest);
+//map对象有几个属性
+console.log(rest.size);
+//清空map对象
+// rest.clear();
+// console.log(rest);
+
+rest.set([1, 2], 'test');
+// 数组是引用类型的，所以这[1,2]已经不是之前设置[1,2]了，地址变了，不是同一个对象了
+console.log(rest.get([1, 2])); //undefined
+
+//属性名是引用类型的时候，需要先定义属性名
+const arr = [1, 2];
+rest.set(arr, 'hello');
+console.log(rest.get(arr)); //hello
+
+rest.set(document.querySelector('h1'), 'Heading');
+console.log(rest);
+console.log(rest.get(document.querySelector('h1')));
+
+// 创建map的第二种方法：数组转map
+const question = new Map([
+  ['question', 'what  is the best'],
+  [1, 'c'],
+  [2, 'java'],
+  [3, 'js'],
+  ['corret', 3],
+  [true, 'corret'],
+  [false, 'try again'],
+]);
+console.log(question);
+
+const openingHours = {
+  Thu: {
+    open: 12,
+    close: 22,
+  },
+  Fri: {
+    open: 11,
+    close: 23,
+  },
+  Sat: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
+console.log(Object.entries(openingHours));
+
+// 对象转map
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+//解构 // index是属性名 item是属性值 [index,value] = item
+console.log(question.get('question'));
+for (const [index, value] of question) {
+  console.log('map对象，解构', index, value);
+  // if (typeof index === 'number') console.log(`Answer ${index}:${value}`);
+}
+
+// item是一个数组，里面有[属性名,属性值]
+for (const item of question) {
+  console.log('map对象', item);
+}
+
+for (const item of question.entries()) {
+  console.log('entries', item);
+}
+
+// const answer = Number(prompt('Your answer'));
+// console.log(question.get(question.get('corret') === answer));
+
+// map 转数组
+console.log([...question]);
+
+// console.log([...question.keys()]);
+console.log([...question.entries()]);
+// console.log([...question.values()]);
+
+console.log(question.entries());
+*/
+
+const gameEvents = new Map([
+  [17, '⚽️ GOAL'],
+  [36, '🔁 Substitution'],
+  [47, '⚽️ GOAL'],
+  [61, '🔁 Substitution'],
+  [64, '🔶 Yellow card'],
+  [69, '🔴 Red card'],
+  [70, '🔁 Substitution'],
+  [72, '🔁 Substitution'],
+  [76, '⚽️ GOAL'],
+  [80, '⚽️ GOAL'],
+  [92, '🔶 Yellow card'],
+]);
+
+// 1。创建一个发生事件数组，去掉重复的
+const events = [...new Set(gameEvents.values())];
+console.log(events);
+
+//移除掉属性为64的
+gameEvents.delete(64);
+console.log(gameEvents);
+
+//平均多久发生一次事件
+const size = gameEvents.size;
+const lastKey = [...gameEvents.keys()].pop(); //得到最后一个key
+const average = lastKey / size;
+console.log(average);
+
+//事件是发生在上半场还是下半场：45分钟区分
+for (const [index, item] of gameEvents) {
+  const name = index <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`[${name} HALF] ${index}: ${item}`);
+}
