@@ -756,6 +756,7 @@ for (const [index, item] of gameEvents) {
 }
 */
 
+/*
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 console.log(plane[0]);
@@ -937,3 +938,4 @@ const deStr = function (str) {
 };
 deStr(flights);
 'sd'.toLocaleUpperCase;
+*/
